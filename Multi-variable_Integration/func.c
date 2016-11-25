@@ -1,10 +1,20 @@
 # include<math.h>
-# define PI 3.1415927
+# include "main.h"
 
-int nvar = 6;
-double low[6] = {0,0,0,0,0,0};
-double up[6] = {1.57,1.57,1.57,1.57,1.57,1.57};
-double num[6] = {10,10,10,10,10,10};
+double low0 = 0;
+double up0 = 1;
+double num[NVAR] = {10,10};
+
+double low1(double *params)
+{
+	return sqrt(1-params[0]*params[0]);
+}
+
+double up1(double *params)
+{
+	return -sqrt(1-params[0]*params[0]);
+}
+
 
 double func(double *params)
 {
