@@ -18,6 +18,6 @@ double up1(double *params)
 
 double func(double *params)
 {
-	double R = cos(params[0])* cos(params[1])* cos(params[2])* cos(params[3])* cos(params[4])* cos(params[5]);
+	double R = 1;
 	return R;
 }
