@@ -3,10 +3,13 @@
 #include <mpi.h>
 #include <time.h>
 
+# include "main.h"
 # include "func.h"
 # include "integral2.h"
 
 int thistask, totaltask, namelen;
+double (* low[NVAR]) (double *);
+double (* up[NVAR]) (double *);
 
 int main(int argc, char **argv)
 {
@@ -21,15 +24,19 @@ int main(int argc, char **argv)
 	double Total_time; 
 	
 	double integral_value = 0;
-	double L = up[0]-low[0];
-	double I = low[0];
+	double L = up0-low0;
+	double I = low0;
 	double delta = L / totaltask;
-	low[0] = I + thistask * delta;
-	up[0] = I + (thistask+1) * delta;
+	low0 = I + thistask * delta;
+	up0= I + (thistask+1) * delta;
 	num[0] /= totaltask;
+
+	low[1] = low1;
+	up[1] = up1;
+
 		
-	double *params = (double *)malloc((nvar+1)*sizeof(double));
-	params[nvar] = 0;
+	double *params = (double *)malloc((NVAR+1)*sizeof(double));
+	params[NVAR] = 0;
 	start = clock(); 
 	double result = m_integral(0,params);
 	finish = clock();
