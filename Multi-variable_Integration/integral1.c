@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <math.h>
 
-double s_intgral(double (*F)(double, double *), double *params, double a, double b, int N)
+double s_intgral(double a, double b, int N, double (*F)(double, double *), double *params)
 {
-    double h = (b - a) / 2.0 / N;
     int i = 0;
+    double h = (b - a) / 2.0 / N;
     double x_0 = a;
     double x_1 = a + h;
     double x_2 = a + 2 * h;
@@ -13,6 +13,7 @@ double s_intgral(double (*F)(double, double *), double *params, double a, double
     double f_2 = F(x_2, params);
     double Sum = 0;
     double sum = 0;
+
     for (i = 0; i < N; i++)
     {
         sum = f_0 / 3 + 4 * f_1 / 3 + f_2 / 3;

@@ -29,7 +29,7 @@ int main(int argc, char **argv)
     double delta = L / totaltask;
     low0 = I + thistask * delta;
     up0 = I + (thistask + 1) * delta;
-    num[0] /= totaltask;
+    NUM[0] /= totaltask;
 
     low[1] = low1;
     up[1] = up1;
