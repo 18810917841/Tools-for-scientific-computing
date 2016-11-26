@@ -1,6 +1,6 @@
 #ifndef MAIN_H
 #define MAIN_H
-#define NVAR 6
+#define NVAR 2
 #define PI 3.1415927
 
 extern int thistask, totaltask, namelen;

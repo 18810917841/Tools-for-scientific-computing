@@ -1,7 +1,8 @@
 SHELL=/bin/bash
 
 CC       = mpicc
-OPTIMIZE = -O2 -Wall -std=c99
+OPTIMIZE = -g -Wall -std=c99
+#OPTIMIZE = -O2 -Wall -std=c99
 MPICHLIB = -lmpich
 MPICHINCL=
 
