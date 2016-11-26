@@ -4,7 +4,7 @@
 #define PI 3.1415927
 
 extern int thistask, totaltask, namelen;
-extern double (* low[NVAR]) (double *);
-extern double (* up[NVAR]) (double *);
+extern double (*low[NVAR])(double *);
+extern double (*up[NVAR])(double *);
 
 #endif
